@@ -24,13 +24,22 @@ class CollectionViewController: UICollectionViewController {
         }*/
     }*/
     var movies = [movie]()
+    var alamObj = RequestWithAlamofire()
     
-    let url_to_request = "https://api.androidhive.info/json/movies.json"
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        dataRequestUsingAlamofire()
+        alamObj.dataRequestUsingAlamofire { (movies) in
+            
+            self.movies = movies
+            self.collectionView?.reloadData()
+        }
+
+        
+        
         
         /*let c1 = CellData(imageURL: "background.jpg")
         let c2 = CellData(imageURL: "background.jpg")
@@ -68,7 +77,7 @@ class CollectionViewController: UICollectionViewController {
     
     
     
-    func dataRequestUsingAlamofire(){
+    /*func dataRequestUsingAlamofire(){
         
         Alamofire.request(url_to_request).responseJSON { response in
             print("Request: \(String(describing: response.request))")   // original url request
@@ -83,7 +92,7 @@ class CollectionViewController: UICollectionViewController {
             
         }
         
-    }
+    }*/
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let story = UIStoryboard(name: "Main", bundle: nil)

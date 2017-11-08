@@ -31,7 +31,7 @@ class DetailsViewController : UIViewController {
         
         movieImage.af_setImage(withURL: URL(string: selectedMovie.image)!)
         print(selectedMovie.title)
-        movieName.text = selectedMovie.title
+        movieName.text = "\(selectedMovie.title!)"
         movieGenre.text = selectedMovie.genre[0]
         movieRating.text = String (selectedMovie.rating)
         movieReleaseYear.text = String (selectedMovie.releaseYear)

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B2E23F81FAFA641004C39EE /* AlamofireClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2E23F71FAFA641004C39EE /* AlamofireClass.swift */; };
 		2B34FFEF1FAAA9B300CB45EB /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B34FFEE1FAAA9B300CB45EB /* DetailsViewController.swift */; };
 		2B51328F1F9D35E8006D74D0 /* NSSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B51328E1F9D35E7006D74D0 /* NSSession.swift */; };
 		2B5132911F9D3A91006D74D0 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B5132901F9D3A91006D74D0 /* Default-568h@2x.png */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B2E23F71FAFA641004C39EE /* AlamofireClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireClass.swift; sourceTree = "<group>"; };
 		2B34FFEE1FAAA9B300CB45EB /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		2B51328E1F9D35E7006D74D0 /* NSSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSSession.swift; sourceTree = "<group>"; };
 		2B5132901F9D3A91006D74D0 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				2B51328E1F9D35E7006D74D0 /* NSSession.swift */,
 				2BDBA2DE1FA8FB440079F0EE /* Movie.swift */,
 				2B34FFEE1FAAA9B300CB45EB /* DetailsViewController.swift */,
+				2B2E23F71FAFA641004C39EE /* AlamofireClass.swift */,
 			);
 			path = Mycollection;
 			sourceTree = "<group>";
@@ -483,6 +486,7 @@
 			files = (
 				2B51328F1F9D35E8006D74D0 /* NSSession.swift in Sources */,
 				2BD76BE91F8C3A7F0060FE86 /* myCollectionCell.swift in Sources */,
+				2B2E23F81FAFA641004C39EE /* AlamofireClass.swift in Sources */,
 				2BDBA2DF1FA8FB440079F0EE /* Movie.swift in Sources */,
 				2BD76BBD1F8C322B0060FE86 /* ViewController.swift in Sources */,
 				2B34FFEF1FAAA9B300CB45EB /* DetailsViewController.swift in Sources */,
