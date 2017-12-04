@@ -11,6 +11,7 @@ import ObjectMapper
 
 class movie : Mappable {
     
+    var id : Int!
     var title : String!
     var image : String!
     var rating : Double!
@@ -26,7 +27,8 @@ class movie : Mappable {
     }
     
     
-    init(title : String , image : String , rating : Double ,releaseYear : Int , genre : [String]) {
+    init(id : Int , title : String , image : String , rating : Double ,releaseYear : Int , genre : [String]) {
+        self.id = id
         self.title = title
         self.image = image
         self.rating = rating
@@ -37,11 +39,12 @@ class movie : Mappable {
     
     
     func mapping(map: Map) {
+        id            <- map["id"]
         title         <- map["title"]
-        image         <- map["image"]
-        rating        <- map["rating"]
-        releaseYear   <- map["releaseYear"]
-        genre         <- map["genre"]
+        image         <- map["poster_path"]
+        rating        <- map["vote_average"]
+        /*releaseYear   <- map["releaseYear"]
+        genre         <- map["genre"]*/
         
     }
     

@@ -14,14 +14,16 @@ class myCollectionCell: UICollectionViewCell {
     
     @IBOutlet weak var cellImage: UIImageView!
     
-    
+    var imageBaseUrl : String = ""
     
     func updateUI(cellData: movie){
         
-        //cellText.text = cellData.cellText
-        
+        //cellText.text = cellData.cellTe
+        imageBaseUrl = "https://image.tmdb.org/t/p/w500"
+        let imageUrl = imageBaseUrl.appending(cellData.image)
+        print(imageUrl)
         //cellImage.image = UIImage (named: (cellData.imageURL))
-        downloadMovieImage(url: cellData.image)
+        downloadMovieImage(url: imageBaseUrl.appending(cellData.image))
     }
     
     

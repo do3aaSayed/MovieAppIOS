@@ -11,7 +11,7 @@ import Alamofire
 import ObjectMapper
 
 
-class CollectionViewController: UICollectionViewController {
+class CollectionViewController: UICollectionViewController , UICollectionViewDelegateFlowLayout{
 
     //@IBOutlet var myCollection: UICollectionView!
     
@@ -62,6 +62,7 @@ class CollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print(movies.count)
         return movies.count
     }
     
@@ -104,6 +105,38 @@ class CollectionViewController: UICollectionViewController {
             
          }*/
     }
+    
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let screenSize = UIScreen.main.bounds
+        let cellWidth = ((screenSize.width  / CGFloat(2.0)) - CGFloat(5.0))
+        let cellHeight = ((screenSize.height / CGFloat(movies.count) / 2.0) - 5.0)
+        var cellSize = CGSize()
+        cellSize.width = cellWidth
+        cellSize.height = cellHeight
+        
+        //let size = CGSize(width: 300, height: 100)
+        
+        return cellSize
+        //return size
+    }
+    
+    /*func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 1.0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout
+        collectionViewLayout: UICollectionViewLayout,
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 1.0
+    }*/
+    
+    
 
 
 }

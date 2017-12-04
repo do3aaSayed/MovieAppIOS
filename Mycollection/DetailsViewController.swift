@@ -28,13 +28,20 @@ class DetailsViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        movieImage.af_setImage(withURL: URL(string: selectedMovie.image)!)
+        let imageURL = getImageURL()
+        movieImage.af_setImage(withURL: URL(string: imageURL)!)
         print(selectedMovie.title)
         movieName.text = "\(selectedMovie.title!)"
-        movieGenre.text = selectedMovie.genre[0]
         movieRating.text = String (selectedMovie.rating)
-        movieReleaseYear.text = String (selectedMovie.releaseYear)
+        /*movieReleaseYear.text = String (selectedMovie.releaseYear)
+        movieGenre.text = selectedMovie.genre[0]*/
+    }
+    
+    func getImageURL () -> String{
+        
+        let imageBaseUrl = "https://image.tmdb.org/t/p/w500"
+        let imageUrl = imageBaseUrl.appending(selectedMovie.image)
+        return imageUrl
     }
     
 }
