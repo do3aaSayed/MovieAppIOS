@@ -15,14 +15,13 @@ class DetailsViewController : UIViewController {
     
     @IBOutlet weak var movieImage: UIImageView!
     
-    @IBOutlet weak var movieName: UITextView!
+    @IBOutlet weak var movieName: UILabel!
     
     @IBOutlet weak var movieGenre: UITextView!
     
     @IBOutlet weak var movieReleaseYear: UITextView!
     
-    @IBOutlet weak var movieRating: UITextView!
-    
+    @IBOutlet weak var movieRating: UILabel!
     
     
     override func viewDidLoad() {

@@ -113,10 +113,10 @@ class CollectionViewController: UICollectionViewController , UICollectionViewDel
         
         let screenSize = UIScreen.main.bounds
         let cellWidth = ((screenSize.width  / CGFloat(2.0)) - CGFloat(5.0))
-        let cellHeight = ((screenSize.height / CGFloat(movies.count) / 2.0) - 5.0)
+        //let cellHeight = ((screenSize.height / CGFloat(movies.count) / 2.0) - 5.0)
         var cellSize = CGSize()
         cellSize.width = cellWidth
-        cellSize.height = cellHeight
+        cellSize.height = 300//cellHeight
         
         //let size = CGSize(width: 300, height: 100)
         
