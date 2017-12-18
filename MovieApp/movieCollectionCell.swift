@@ -1,5 +1,5 @@
 //
-//  myCollectionCell.swift
+//  movieCollectionCell.swift
 //  Mycollection
 //
 //  Created by Doaa on 10/9/17.
@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import AlamofireImage
 
-class myCollectionCell: UICollectionViewCell {
+class movieCollectionCell: UICollectionViewCell {
     
     @IBOutlet weak var cellImage: UIImageView!
     
