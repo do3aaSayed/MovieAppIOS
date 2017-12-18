@@ -24,7 +24,7 @@ class CollectionViewController: UICollectionViewController , UICollectionViewDel
         }*/
     }*/
     var movies = [movie]()
-    var alamObj = RequestWithAlamofire()
+    var alamofireObject = RequestWithAlamofire()
     
     
     
@@ -32,7 +32,7 @@ class CollectionViewController: UICollectionViewController , UICollectionViewDel
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        alamObj.dataRequestUsingAlamofire { (movies) in
+        alamofireObject.moviesRequest { (movies) in
             
             self.movies = movies
             self.collectionView?.reloadData()
