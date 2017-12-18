@@ -20,7 +20,6 @@ class ReviewsTableViewCell : UITableViewCell {
     }
     
     func updateReviewsTableView(movieReview : review) {
-        
         authorNameLabel.text = movieReview.authorName
         reviewLabel.text = movieReview.authorReview
         

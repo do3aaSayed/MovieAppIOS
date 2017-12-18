@@ -35,12 +35,20 @@ class DetailsViewController : UIViewController, UITableViewDelegate, UITableView
         movieReviewsTableView.delegate = self
         movieReviewsTableView.dataSource = self
         
+        movieReviewsTableView.estimatedRowHeight = 50
+        movieReviewsTableView.rowHeight = UITableViewAutomaticDimension
+        
+        RequestWithAlamofire().reviewsRequest(selectedMovieId: self.selectedMovie.id) { (reviews) in
+            self.reviews = reviews
+            self.movieReviewsTableView.reloadData()
+        }
+        
     }
     
     func getImageURL () -> String{
         
         let imageBaseUrl = "https://image.tmdb.org/t/p/w500"
-        let imageUrl = "\(imageBaseUrl)\(selectedMovie.image)"
+        let imageUrl = "\(imageBaseUrl)\(selectedMovie.image ?? "")"
         return imageUrl
     }
     

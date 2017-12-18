@@ -18,8 +18,8 @@ class RequestWithAlamofire{
     
     
     func moviesRequest(setMovies : @escaping (_ movies : [movie])->())->(){
-        
-        Alamofire.request("\(baseUrl)\"/popular?\(apiKey)").responseJSON { response in
+
+        Alamofire.request("\(baseUrl)popular?\(apiKey)").responseJSON { response in
             print("Request: \(String(describing: response.request))")   // original url request
             print("Response: \(String(describing: response.response))") // http url response
             print("Result: \(response.result)")                         // response serialization result
@@ -33,23 +33,25 @@ class RequestWithAlamofire{
             
         }
         
-        func reviewsRequest(selectedMovieId : Int , setReviews : @escaping (_ reviews : [review])->())->(){
-            
-            Alamofire.request("\(baseUrl)\(selectedMovieId)/reviews?\(apiKey)").responseJSON { response in
-                print("Request: \(String(describing: response.request))")   // original url request
-                print("Response: \(String(describing: response.response))") // http url response
-                print("Result: \(response.result)")                         // response serialization result
-                
-                if let json = response.result.value {
-                    let results = (json as! [String : Any])["results"] as! [[String : Any]]
-                    let reviews = Mapper<review>().mapArray(JSONArray: results)
-                    setReviews(reviews)
-                }
-                
-                
-            }
+    }
+
+    
+    func reviewsRequest(selectedMovieId : Int , setReviews : @escaping (_ reviews : [review])->())->(){
         
+        Alamofire.request("\(baseUrl)\(selectedMovieId)/reviews?\(apiKey)").responseJSON { response in
+            print("Request: \(String(describing: response.request))")   // original url request
+            print("Response: \(String(describing: response.response))") // http url response
+            print("Result: \(response.result)")                         // response serialization result
+            
+            if let json = response.result.value {
+                let results = (json as! [String : Any])["results"] as! [[String : Any]]
+                let reviews = Mapper<review>().mapArray(JSONArray: results)
+                setReviews(reviews)
+            }
+            
+            
         }
+        
     }
 
 }
