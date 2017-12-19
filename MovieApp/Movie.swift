@@ -15,8 +15,7 @@ class movie : Mappable {
     var title : String!
     var image : String!
     var rating : Double!
-    var releaseYear : Int!
-    var genre : [String]!
+   
     
     required init?(map: Map) {
         
@@ -27,13 +26,11 @@ class movie : Mappable {
     }
     
     
-    init(id : Int , title : String , image : String , rating : Double ,releaseYear : Int , genre : [String]) {
+    init(id : Int , title : String , image : String , rating : Double) {
         self.id = id
         self.title = title
         self.image = image
         self.rating = rating
-        self.releaseYear = releaseYear
-        self.genre = genre
         
     }
     
@@ -43,8 +40,6 @@ class movie : Mappable {
         title         <- map["title"]
         image         <- map["poster_path"]
         rating        <- map["vote_average"]
-        /*releaseYear   <- map["releaseYear"]
-        genre         <- map["genre"]*/
         
     }
     

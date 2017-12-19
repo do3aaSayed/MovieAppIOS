@@ -17,7 +17,7 @@ class RequestWithAlamofire{
     //let moviesUrlToRequest = "https://api.themoviedb.org/3/movie/popular?api_key=cd816dc09b72c3ddab5b84c0949d0bdf"
     
     
-    func moviesRequest(setMovies : @escaping (_ movies : [movie])->())->(){
+    func moviesRequest(setMovies : @escaping (_ moviesArr : [movie])->())->(){
 
         Alamofire.request("\(baseUrl)popular?\(apiKey)").responseJSON { response in
             print("Request: \(String(describing: response.request))")   // original url request
